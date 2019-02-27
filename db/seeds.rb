@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+gordon = Product.new({name:"Gordon", artist: "Barenaked Ladies", year: "1992", label: "Reprise/Sire", tracks: "1. Hello City, 2. Enid, 3. Grade 9, 4. Brian Wilson, 5. Be My Yoko Ono, 6. Wrap Your Arms Around Me, 7. What A Good Boy, 8. The King of Bedside Manor, 9. Box Set, 10. I Love You, 11. New Kid (On the Block), 12. Blame It On Me, 13. The Flag, 14. If I Had $1000000, 15. Crazy", price: 25.99, image_url: "https://upload.wikimedia.org/wikipedia/en/2/2c/Gordon-album.jpg", description: "Barenaked Ladies' debut album, a quirky jazz-pop collection from Canada's novelty kings, but shows surprising depth and nuance."})
+gordon.save
+damn = Product.new({name:"Damn", artist: "Kendrick Lamar", year: "2017", label: "Aftermath/Interscope/Top Dawg", tracks: "1. BLOOD., 2. DNA., 3. YAH., 4. ELEMENT., 5. FEEL., 6. LOYALTY. (feat. Rihanna), 7. PRIDE., 8. HUMBLE., 9. LUST., 10. LOVE. (feat. Zacari), 11. XXX. (feat. U2), 12. FEAR., 13. GOD., 14. DUCKWORTH.", price: 33.99, image_url: "https://upload.wikimedia.org/wikipedia/en/5/51/Kendrick_Lamar_-_Damn.png", description: "Kendrick Lamar's follow-up to To Pimp A Butterfly won the Pulitzer Prize for Music in 2017."})
+damn.save
+nevermind = Product.new({name:"Nevermind", artist: "Nirvana", year: "1991", label: "DGC", tracks: "1. Smells Like Teen Spirit, 2. In Bloom, 3. Come As You Are, 4. Breed, 5. Lithium, 6. Polly, 7. Territorial Pissings, 8. Drain You, 9. Lounge Act, 10. Stay Away, 11. On A Plain, 12. Something In the Way", price: 28.99, image_url: "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg", description: "Cobain and company's mainstream breakthrough, the album that put the grunge scene on the map."})
+nevermind.save
