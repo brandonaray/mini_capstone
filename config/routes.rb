@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    get "/damn" => "products#all_products"
+    get "/damn" => "products#damn"
   end
 
   namespace :api do
-    get "/nevermind" => "products#all_products"
+    get "/nevermind" => "products#nevermind"
   end
-  
+
 end
