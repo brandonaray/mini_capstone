@@ -1,7 +1,8 @@
 class Api::ProductsController < ApplicationController
-  # def all_products
-
-  # end
+  def all_products
+    @products = Product.all
+    render "products.json.jbuilder"
+  end
 
   def gordon
     @gordon = Product.find_by(name: "Gordon")
