@@ -4,8 +4,8 @@ class Api::ProductsController < ApplicationController
     render "products.json.jbuilder"
   end
 
-  def search_product_method
-    input_id = params["id"]
+  def one_product
+    input_id = params[:id]
     @instance_product = Product.find_by(id: input_id)
     render "search_product.json.jbuilder"
   end
