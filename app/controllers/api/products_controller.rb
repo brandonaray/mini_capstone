@@ -24,6 +24,20 @@ class Api::ProductsController < ApplicationController
     render "show.json.jbuilder"
   end
 
+  def update
+    @product = Product.find_by(id: params[:id])
+    @product.name = params[:change_name] || @product.name
+    @product.artist = params[:change_artist] || @product.artist
+    @product.year = params[:change_year] || @product.year
+    @product.label = params[:change_label] || @product.label
+    @product.tracks = params[:change_tracks] || @product.tracks
+    @product.price = params[:change_price] || @product.price
+    @product.image_url = params[:change_image_url] || @product.image_url
+    @product.description = params[:change_description] || @product.description
+    @product.save
+    render "show.json.jbuilder"
+  end
+
   # def gordon
   #   @gordon = Product.find_by(name: "Gordon")
   #   render "gordon.json.jbuilder"
