@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     # get "/search_product" => "products#one_product"
     get "/products/:id" => "products#show"
     # post "/search_product_body" => "products#one_product"
+    post "products" => "products#create"
   end
 end
