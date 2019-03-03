@@ -11,14 +11,14 @@ class Api::ProductsController < ApplicationController
 
   def create
     @product = Product.new(
-      name: params[:new_name], 
-      artist: params[:new_artist],
-      year: params[:new_year], 
-      label: params[:new_label],
-      tracks: params[:new_tracks],
-      price: params[:new_price], 
-      image_url: params[:new_image_url],
-      description: params[:new_description] 
+      name: params[:name], 
+      artist: params[:artist],
+      year: params[:year], 
+      label: params[:label],
+      tracks: params[:tracks],
+      price: params[:price], 
+      image_url: params[:image_url],
+      description: params[:description] 
       )
     @product.save
     render "show.json.jbuilder"
@@ -26,14 +26,14 @@ class Api::ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    @product.name = params[:change_name] || @product.name
-    @product.artist = params[:change_artist] || @product.artist
-    @product.year = params[:change_year] || @product.year
-    @product.label = params[:change_label] || @product.label
-    @product.tracks = params[:change_tracks] || @product.tracks
-    @product.price = params[:change_price] || @product.price
-    @product.image_url = params[:change_image_url] || @product.image_url
-    @product.description = params[:change_description] || @product.description
+    @product.name = params[:name] || @product.name
+    @product.artist = params[:artist] || @product.artist
+    @product.year = params[:year] || @product.year
+    @product.label = params[:label] || @product.label
+    @product.tracks = params[:tracks] || @product.tracks
+    @product.price = params[:price] || @product.price
+    @product.image_url = params[:image_url] || @product.image_url
+    @product.description = params[:description] || @product.description
     @product.save
     render "show.json.jbuilder"
   end
