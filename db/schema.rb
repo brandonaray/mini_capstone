@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_27_004813) do
+ActiveRecord::Schema.define(version: 2019_03_06_023810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 2019_02_27_004813) do
     t.string "artist"
     t.string "year"
     t.string "label"
-    t.string "tracks"
-    t.integer "price"
+    t.text "tracks"
+    t.decimal "price", precision: 9, scale: 2
     t.string "image_url"
-    t.string "description"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "in_stock"
   end
 
 end
