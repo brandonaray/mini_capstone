@@ -19,7 +19,10 @@ class Product < ApplicationRecord
   end
 
   def tracks_list
-    tracks.split(", ")
+    list = tracks.split(", ")
+    # list.each do |track|
+    #   return track
+    # end
   end
 
   def supplier
