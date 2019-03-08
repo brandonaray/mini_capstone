@@ -21,4 +21,8 @@ class Product < ApplicationRecord
   def tracks_list
     tracks.split(", ")
   end
+
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
 end
