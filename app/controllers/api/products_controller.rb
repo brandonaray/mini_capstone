@@ -30,8 +30,7 @@ class Api::ProductsController < ApplicationController
       year: params[:year], 
       label: params[:label],
       tracks: params[:tracks],
-      price: params[:price], 
-      image_url: params[:image_url],
+      price: params[:price],
       description: params[:description],
       in_stock: true
       )
@@ -50,7 +49,6 @@ class Api::ProductsController < ApplicationController
     @product.label = params[:label] || @product.label
     @product.tracks = params[:tracks] || @product.tracks
     @product.price = params[:price] || @product.price
-    @product.image_url = params[:image_url] || @product.image_url
     @product.description = params[:description] || @product.description
     @product.in_stock = params[:in_stock] || @product.in_stock
     if @product.save
