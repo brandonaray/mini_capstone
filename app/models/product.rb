@@ -7,7 +7,7 @@ class Product < ApplicationRecord
   validates :description, length: { in: 2..500 }
 
   def images
-    Image.find_by(id: product_id)
+    Image.where(product_id: id)
   end
 
   def is_discounted?
