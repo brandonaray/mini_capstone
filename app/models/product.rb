@@ -6,6 +6,7 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :description, length: { in: 2..500 }
 
+  # Has many
   def images
     Image.where(product_id: id)
   end

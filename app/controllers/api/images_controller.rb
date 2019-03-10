@@ -10,4 +10,10 @@ class Api::ImagesController < ApplicationController
     #   render json: {errors: @image.errors.full_messages}, status: :unprocessable_entity
     # end
   end
+
+  def destroy
+    @image = Image.find_by(id: params[:id])
+    @image.destroy
+    render json: {message: "Image successfully deleted"}
+  end
 end

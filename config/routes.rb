@@ -18,5 +18,6 @@ Rails.application.routes.draw do
 
   namespace :api do
     post "images" => "images#create"
+    delete "images/:id" => "images#destroy"
   end
 end
