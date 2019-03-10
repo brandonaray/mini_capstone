@@ -6,10 +6,9 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :description, length: { in: 2..500 }
 
-  # Has many
-  def images
-    Image.where(product_id: id)
-  end
+  belongs_to :supplier
+
+  has_many :images
 
   def is_discounted?
     price < 20
@@ -28,9 +27,5 @@ class Product < ApplicationRecord
     # list.each do |track|
     #   return track
     # end
-  end
-
-  def supplier
-    Supplier.find_by(id: supplier_id)
   end
 end
