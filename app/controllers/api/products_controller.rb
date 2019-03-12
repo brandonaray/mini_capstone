@@ -19,8 +19,13 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find_by(id: params[:id])
-    render "show.json.jbuilder"
+    
+    if current_user
+      @product = Product.find_by(id: params[:id])
+      render "show.json.jbuilder"
+    else
+      render json: {message: "Not a valid user"}
+    end
   end
 
   def create
