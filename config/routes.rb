@@ -13,11 +13,14 @@ Rails.application.routes.draw do
 
     get "/suppliers" => "suppliers#index"
     get "/suppliers/:id" => "suppliers#show"
-    post "suppliers" => "suppliers#create"
-    patch "suppliers/:id" => "suppliers#update"
-    delete "suppliers/:id" => "suppliers#destroy"
+    post "/suppliers" => "suppliers#create"
+    patch "/suppliers/:id" => "suppliers#update"
+    delete "/suppliers/:id" => "suppliers#destroy"
 
-    post "images" => "images#create"
-    delete "images/:id" => "images#destroy"
+    post "/images" => "images#create"
+    delete "/images/:id" => "images#destroy"
+
+    post "/orders" => "orders#create"
+    get "/orders" => "orders#index"
   end
 end
