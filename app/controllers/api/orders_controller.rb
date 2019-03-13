@@ -1,4 +1,5 @@
 class Api::OrdersController < ApplicationController
+  before_action :authenticate_user
 
   def create
     price = Product.find_by(id: params[:product_id]).price

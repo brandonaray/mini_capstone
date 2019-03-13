@@ -1,4 +1,6 @@
 class Api::ProductsController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all
 
@@ -19,13 +21,8 @@ class Api::ProductsController < ApplicationController
   end
 
   def show
-    
-    if current_user
-      @product = Product.find_by(id: params[:id])
-      render "show.json.jbuilder"
-    else
-      render json: {message: "Not a valid user"}
-    end
+    @product = Product.find_by(id: params[:id])
+    render "show.json.jbuilder"
   end
 
   def create
