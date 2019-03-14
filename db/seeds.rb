@@ -1,6 +1,14 @@
+User.create!(name: "Brandon Ray", email: "brandon@email.com", password: "password")
+User.create!(name: "Kate Bauer", email: "kate@email.com", password: "password")
+
 Supplier.create!({name: "CD Empire", email: "get_vinyl@cdempire.com", phone_number: "800-588-2300"})
 Supplier.create!({name: "Amazon.com", email: "jbezos@amazon.com", phone_number: "555-123-4567"})
 Supplier.create!({name: "Vinyl Me Please", email: "vinylopolous@vmp.com", phone_number: "+81 96545 23456"})
+
+Category.create!(name: "Rock")
+Category.create!(name: "Alternative")
+Category.create!(name: "Hip-Hop")
+Category.create!(name: "Pop")
 
 Product.create!({name:"Gordon", artist: "Barenaked Ladies", year: "1992", label: "Reprise/Sire", tracks: "1. Hello City, 2. Enid, 3. Grade 9, 4. Brian Wilson, 5. Be My Yoko Ono, 6. Wrap Your Arms Around Me, 7. What A Good Boy, 8. The King of Bedside Manor, 9. Box Set, 10. I Love You, 11. create Kid (On the Block), 12. Blame It On Me, 13. The Flag, 14. If I Had $1000000, 15. Crazy", price: 25.99, supplier_id: 1, description: "Barenaked Ladies' debut album, a quirky jazz-pop collection from Canada's novelty kings, but shows surprising depth and nuance."})
 Product.create!({name:"Damn", artist: "Kendrick Lamar", year: "2017", label: "Aftermath/Interscope/Top Dawg", tracks: "1. BLOOD., 2. DNA., 3. YAH., 4. ELEMENT., 5. FEEL., 6. LOYALTY. (feat. Rihanna), 7. PRIDE., 8. HUMBLE., 9. LUST., 10. LOVE. (feat. Zacari), 11. XXX. (feat. U2), 12. FEAR., 13. GOD., 14. DUCKWORTH.", price: 33.99, supplier_id: 2, description: "Kendrick Lamar's follow-up to To Pimp A Butterfly won the Pulitzer Prize for Music in 2017."})
