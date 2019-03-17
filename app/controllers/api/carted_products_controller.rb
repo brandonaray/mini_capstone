@@ -9,4 +9,9 @@ class Api::CartedProductsController < ApplicationController
     @carted_product.save
     render json: {message: "Item successfully added to cart"}
   end
+
+  def index
+    @carted_products = current_user.carted_products.where(status: "carted")
+    render "index.json.jbuilder"
+  end
 end
