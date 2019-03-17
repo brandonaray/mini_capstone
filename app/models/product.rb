@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   has_many :images
   has_many :orders
   has_many :category_products
+  has_many :categories, through: :category_products
 
   def is_discounted?
     price < 20
@@ -29,4 +30,6 @@ class Product < ApplicationRecord
     #   return track
     # end
   end
+
+  
 end

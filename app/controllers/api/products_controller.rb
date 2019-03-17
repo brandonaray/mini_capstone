@@ -13,6 +13,8 @@ class Api::ProductsController < ApplicationController
       @products = @products.where("name ILIKE ?", "%#{params[:search]}%")
     elsif params[:discount]
       @products = @products.where("price < ?", 20)
+    elsif params[:category]
+      @products = @products.where("categories ILIKE ?", "%#{params[:category]}%")
     else
       @products = @products.order(:id => :asc)
     end
