@@ -1,31 +1,41 @@
 class Api::OrdersController < ApplicationController
   before_action :authenticate_user
 
+  def index
+    @orders = current_user.orders
+    render "index.json.jbuilder"
+  end
+
   def create
-    price = Product.find_by(id: params[:product_id]).price
-    quantity = params[:quantity].to_i
-    subtotal = price * quantity
-    tax_rate = 0.0625
-    tax = subtotal * tax_rate
+    shopping_cart = current_user.carted_products.where(status: "carted")
+    subtotal = 0
+
+    shopping_cart.each do |item|
+      subtotal += (item.product.price * item.quantity)
+    end
+
+    tax = subtotal * 0.09
     total = subtotal + tax
 
     @order = Order.new(
     user_id: current_user.id,
-    product_id: params[:product_id],
-    quantity: params[:quantity],
     subtotal: subtotal,
     tax: tax,
     total: total
     )
+    @order.save
     if @order.save
-      render "show.json.jbuilder"
-    else
-      render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
-    end
-  end
+      shopping_cart.each do |item|
+        item.status = "purchased"
+        item.order_id = @order.id
+        item.save
+      end
 
-  def index
-    @orders = current_user.orders
-    render "index.json.jbuilder"
+    render json: {message: "yo"}
+      # render "show.json.jbuilder"
+    
+    # else
+      # render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
+    end
   end
 end
