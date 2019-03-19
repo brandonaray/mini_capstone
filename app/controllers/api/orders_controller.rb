@@ -6,6 +6,11 @@ class Api::OrdersController < ApplicationController
     render "index.json.jbuilder"
   end
 
+  def show
+    @order = Order.find_by(id: params[:id])
+    render "show.json.jbuilder"
+  end
+
   def create
     shopping_cart = current_user.carted_products.where(status: "carted")
     subtotal = 0
@@ -30,12 +35,15 @@ class Api::OrdersController < ApplicationController
         item.order_id = @order.id
         item.save
       end
-
-    render json: {message: "yo"}
-      # render "show.json.jbuilder"
-    
-    # else
-      # render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
+      render "show.json.jbuilder"
+    else
+      render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @order = Order.find_by(id: params[:id])
+    @order.destroy
+    render "Item removed from cart"
   end
 end

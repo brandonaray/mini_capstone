@@ -1,4 +1,5 @@
-json.product carted_product.product.name
+json.product carted_product.product
+json.id carted_product.id
 json.quantity carted_product.quantity
 json.status carted_product.status
 # json.subtotal carted_product.subtotal
