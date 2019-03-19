@@ -40,10 +40,4 @@ class Api::OrdersController < ApplicationController
       render json: {errors: @order.errors.full_messages}, status: :unprocessable_entity
     end
   end
-
-  def destroy
-    @order = Order.find_by(id: params[:id])
-    @order.destroy
-    render "Item removed from cart"
-  end
 end
