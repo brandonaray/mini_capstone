@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get "/products" => "products#index"
-  get "products/new" => "products#new"
+  get "/products/new" => "products#new"
+  post "/products" => "products#create"
   get "/products/:id" => "products#show"
+  patch "/products/:id/"
 
   namespace :api do
     post "/users" => "users#create"
