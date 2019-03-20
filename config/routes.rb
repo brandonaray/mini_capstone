@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get "/products/new" => "products#new"
   post "/products" => "products#create"
   get "/products/:id" => "products#show"
-  patch "/products/:id/"
+  get "/products/:id/edit" => "products#edit"
 
   namespace :api do
     post "/users" => "users#create"

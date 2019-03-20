@@ -23,6 +23,12 @@ class ProductsController < ApplicationController
     redirect_to "/products/#{@product.id}"
   end
 
+  def edit
+    @users = User.all
+    @product = Product.find_by(id: params[:id])
+    render "edit.html.erb"
+  end
+
   def show
     @product = Product.find_by(id: params[:id])
     render "show.html.erb"

@@ -1,0 +1,34 @@
+<h1>Edit Product</h1>
+<form action="/products/<%= @product.id %>" method="patch">
+  <div>
+    Title: <input type="text" value="<%= @product.name %>" />
+  </div>  
+  <div>
+    Artist: <input type="text" value="<%= @product.artist %>" />
+  </div>  
+  <div>
+    Year: <input type="text" value="<%= @product.year %>" />
+  </div>  
+  <div>
+    Label: <input type="text" value="<%= @product.label %>" />
+  </div>  
+  <div>
+    Price: <input type="text" value="<%= @product.price %>" />
+  </div> 
+  <div>
+    Description: <input type="text" value="<%= @product.description %>" />
+  </div>
+
+  <div>
+    Choose a user:
+    <select name="user_id">
+      <% @users.each do |user| %>
+        <option value="<%= user.id %>"><%= user.name %></option>
+      <% end %>
+    </select>
+  </div>
+  
+  <div>
+    <input type="submit" name="" value="Update Product" />
+  </div>
+</form>
