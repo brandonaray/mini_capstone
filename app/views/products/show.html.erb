@@ -5,3 +5,5 @@
 <h5><%= @product.description %></h5>
 <h4><%= @product.price %></h4>
 <a href="/products">Back to all products</a>
+<a href="/products/<%= @product.id %>/edit">Edit product</a>
+<a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow">Delete product</a>
