@@ -1,7 +1,18 @@
 body {
+  background-image: url('full-bloom.png');
 
 }
 
 h1 {
+  font-family: "Lucida Bright",Georgia,serif;
+}
+
+
+
+.card {
+  font-family: Tahoma,Verdana,Segoe,sans-serif;
+}
+
+.card h4 {
   font-family: "Lucida Bright",Georgia,serif
 }
