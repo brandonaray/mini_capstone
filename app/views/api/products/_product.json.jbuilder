@@ -12,3 +12,4 @@ json.is_discounted product.is_discounted?
 json.in_stock product.in_stock
 json.images product.images
 json.categories product.categories
+json.primary_image product.primary_image
